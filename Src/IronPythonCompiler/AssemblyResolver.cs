@@ -188,11 +188,11 @@ namespace IronPythonCompiler {
             ConsoleOps.Error(true, "unable to find mscorlib.dll");
             return null;
         }
-
+#pragma warning disable IDE0051
         private void AddHintPath(string assemblyName, string path) {
             _hintpaths.Add(assemblyName, path);
         }
-
+#pragma warning restore IDE0051
         private IEnumerable<string> FindAssemblyPath(string file) {
             if (Path.IsPathRooted(file)) {
                 if (File.Exists(file)) {
